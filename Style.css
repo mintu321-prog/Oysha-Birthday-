@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Hind Siliguri", sans-serif;
+    background: #08000f;
+    color: white;
+    overflow: hidden;
+}
+
+/* Screens */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.08);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease,
+        visibility 1s;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Background */
+
+.screen::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, #ff1f7a33, transparent 30%),
+        radial-gradient(circle at 80% 80%, #8b2cff33, transparent 30%),
+        linear-gradient(135deg, #08000f, #18001f, #050008);
+
+    z-index: -2;
+}
+
+/* Intro */
+
+.intro-content {
+    text-align: center;
+    padding: 25px;
+}
+
+.small-text {
+    font-size: 18px;
+    opacity: .8;
+    margin-bottom: 15px;
+}
+
+.intro-content h1 {
+    font-family: "Noto Serif Bengali", serif;
+    font-size: clamp(65px, 18vw, 120px);
+
+    background: linear-gradient(
+        90deg,
+        #ff6aa8,
+        #ffffff,
+        #c36bff,
+        #ff6aa8
+    );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: gradient 4s infinite;
+}
+
+.intro-content p {
+    font-size: 20px;
+    opacity: .85;
+    margin: 10px 0 30px;
+}
+
+/* Buttons */
+
+button {
+    border: none;
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        #ff3d8d,
+        #8c35ff
+    );
+
+    box-shadow:
+        0 0 20px #ff3d8d66,
+        0 10px 35px #0008;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+
+    box-shadow:
+        0 0 35px #ff3d8d99,
+        0 15px 40px #0009;
+}
+
+/* Birthday */
+
+.content {
+    text-align: center;
+    padding: 25px;
+}
+
+.date {
+    font-size: 18px;
+    color: #ff8fbe;
+    margin-bottom: 10px;
+}
+
+.content h2 {
+    font-family: "Noto Serif Bengali", serif;
+    font-size: 38px;
+}
+
+.name {
+    font-family: "Noto Serif Bengali", serif;
+
+    font-size: clamp(60px, 15vw, 100px);
+
+    background: linear-gradient(
+        90deg,
+        #ff5c9c,
+        #fff,
+        #b56cff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.cake {
+    font-size: 85px;
+
+    margin: 15px;
+
+    animation:
+        cakeFloat 2s ease-in-out infinite;
+}
+
+.wish {
+    max-width: 500px;
+
+    margin: 0 auto 30px;
+
+    font-size: 20px;
+    opacity: .9;
+}
+
+/* Letter */
+
+.letter-card {
+    width: min(90%, 600px);
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background: #ffffff0c;
+
+    border: 1px solid #ffffff22;
+
+    backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 30px 80px #0008,
+        inset 0 1px #ffffff22;
+
+    text-align: center;
+}
+
+.envelope {
+    font-size: 55px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.letter-card h2 {
+    font-family: "Noto Serif Bengali", serif;
+
+    font-size: 32px;
+
+    margin: 10px 0 20px;
+}
+
+.letter-card p {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin: 12px 0;
+
+    color: #f7eaf2;
+}
+
+.signature {
+    font-family: "Noto Serif Bengali", serif;
+
+    font-size: 25px;
+
+    color: #ff8bbd;
+
+    margin: 20px 0;
+}
+
+/* Final */
+
+.final-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.final-content h1 {
+    font-family: "Noto Serif Bengali", serif;
+
+    font-size: 40px;
+}
+
+.final-content h2 {
+    font-size: 65px;
+
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ff579a,
+        #fff,
+        #bb6cff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Round photo */
+
+.photo {
+    width: 190px;
+    height: 190px;
+
+    margin: 10px auto 25px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ff4f9a,
+        #b45cff,
+        #fff,
+        #ff4f9a
+    );
+
+    box-shadow:
+        0 0 25px #ff4f9a88,
+        0 0 70px #a448ff44;
+
+    animation: photoGlow 3s ease-in-out infinite;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 4px solid #120018;
+}
+
+.final-content p {
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+.from {
+    font-size: 18px;
+    opacity: .8;
+}
+
+/* Animations */
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: 0%;
+    }
+}
+
+@keyframes cakeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes photoGlow {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .letter-card {
+        padding: 25px 20px;
+    }
+
+    .letter-card p {
+        font-size: 16px;
+    }
+
+    .content h2 {
+        font-size: 30px;
+    }
+
+    .wish {
+        font-size: 17px;
+    }
+
+    .final-content h1 {
+        font-size: 32px;
+    }
+
+    .final-content h2 {
+        font-size: 55px;
+    }
+
+    .photo {
+        width: 165px;
+        height: 165px;
+    }
+  }
